@@ -5,3 +5,4 @@
 2、将botchat加入到配置文件中
 3、将res中的keyword、Zoe、DIY加入你的资源库中res/img/  下并列存在  
 基本完成！
+ 
