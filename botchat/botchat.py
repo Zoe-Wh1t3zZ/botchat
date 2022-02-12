@@ -30,6 +30,11 @@ sv = Service(
 async def bangzhu_botchat(bot, ev):
     await bot.send(ev, sv_help, at_sender=True)
 
+pathDIY = 'C:/Users/Administrator/Desktop/res/img/DIY/'
+pathZOE = 'C:/Users/Administrator/Desktop/res/img/Zoe/'
+
+
+
 #=====人格=====#
 @sv.on_keyword(('沙雕机器人', '笨蛋机器人', '傻逼机器人', '憨憨机器人', '憨批机器人', '沙雕派蒙', '笨蛋派蒙', '傻逼派蒙', '憨憨派蒙', '憨批派蒙'))
 async def chat_sad(bot, ev):
@@ -55,7 +60,7 @@ async def chat_mua(bot, ev):
 
 @sv.on_fullmatch(('早安', '早安哦', '早上好', '早上好啊', '早上好呀', '早', 'good morning'))
 async def goodmorning(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/DIY/刻晴早安.mp3'
+    path = f'{pathDIY}刻晴早安.mp3'
     now_hour=datetime.now(tz).hour
     if 0<=now_hour<6:
         await bot.send(ev, f'好早，现在才{now_hour}点呢', at_sender=True)
@@ -69,7 +74,7 @@ async def goodmorning(bot, ev):
         
 @sv.on_fullmatch(('午安', '午安哦', '中午好', '中午好啊', '中午好呀', '下午好', 'good noon'))
 async def goodnoon(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/DIY/刻晴午安.mp3'
+    path = f'{pathDIY}刻晴午安.mp3'
     now_hour=datetime.now(tz).hour
     if 11<=now_hour<13:
         await bot.send(ev, f'中午好，我们去找刻晴姐姐吧！', at_sender=True)
@@ -82,7 +87,7 @@ async def goodnoon(bot, ev):
 @sv.on_fullmatch(('晚上好', '晚上好啊', '晚上好呀', 'good evening'))
 async def goodevening(bot, ev):
     now_hour=datetime.now(tz).hour
-    path = 'C:/Users/Administrator/Desktop/res/img/DIY/刻晴晚上好.mp3'
+    path = f'{pathDIY}刻晴晚上好.mp3'
     if 18<=now_hour<24:
         await bot.send(ev, f'晚上好！今晚想做什么呢？', at_sender=True)
         await bot.send(ev, f'[CQ:record,file=file:///{path}]')
@@ -96,7 +101,7 @@ async def goodevening(bot, ev):
 @sv.on_fullmatch(('晚安', '晚安哦', '晚安啦', 'good night'))
 async def goodnight(bot, ev):
     now_hour=datetime.now(tz).hour
-    path = 'C:/Users/Administrator/Desktop/res/img/DIY/甘雨晚安.mp3'
+    path = f'{pathDIY}甘雨晚安.mp3'
     if now_hour<=3 or now_hour>=21:
         await bot.send(ev, '晚安~', at_sender=True)
         await bot.send(ev, f'[CQ:record,file=file:///{path}]')
@@ -115,113 +120,114 @@ async def eatme(bot, ev):
 
 @sv.on_keyword(('诶嘿','哎嘿','欸嘿'))
 async def eihe(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/DIY/诶嘿.mp3'
+    path = f'{pathDIY}诶嘿.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('进不去'))
 async def nointo(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/DIY/进不去.mp3'
+    path = f'{pathDIY}进不去.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('你是谁'))
 async def whoareu(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/DIY/嘿嘿你猜.mp3'
+    path = f'{pathDIY}嘿嘿你猜.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('前面的区域'))
 async def qmdqy(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/前面的区域.mp3'
+    path = f'{pathZOE}前面的区域.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('祝福'))
 async def zf(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/来个祝福.mp3'
+    path = f'{pathZOE}来个祝福.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('泪目'))
 async def leimu(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/泪目.mp3'
+    path = f'{pathZOE}泪目.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('中二派蒙'))
 async def zhonger(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/中二派蒙.mp3'
+    path = f'{pathZOE}中二派蒙.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('抱抱'))
 async def baobao(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/真是个小可爱.mp3'
+    path = f'{pathZOE}真是个小可爱.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('无语'))
 async def nosay(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/无语.mp3'
+    path = f'{pathZOE}无语.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('伙伴'))
 async def friend(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/伙伴.mp3'
+    path = f'{pathZOE}伙伴.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('好色哦','好色噢','好涩哦'))
 async def sexy(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/好色哦.mp3'
+    path = f'{pathZOE}好色哦.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('生气'))
 async def angry(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/好生气.mp3'
+    path = f'{pathZOE}好生气.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('好气哦','好气噢'))
 async def nervous(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/好气哦.mp3'
+    path = f'{pathZOE}好气哦.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('憨批'))
 async def shabi(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/憨批.mp3'
+    path = f'{pathZOE}憨批.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('大佬nb','大佬牛逼'))
 async def dalao(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/大佬nb.mp3'
+    path = f'{pathZOE}大佬nb.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('不是吧'))
 async def asir(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/不是吧阿sir.mp3'
+    path = f'{pathZOE}不是吧阿sir.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('变态'))
 async def biantai(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/好变态.mp3'
+    path = f'{pathZOE}好变态.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('给爷爬'))
 async def geiyepa(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/给爷爬.mp3'
+    path = f'{pathZOE}给爷爬.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('信我'))
 async def believeme(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/我信你个鬼.mp3'
+    path = f'{pathZOE}我信你个鬼.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('这个仇','记住'))
 async def thechou(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/这个仇.mp3'
+    path = f'{pathZOE}这个仇.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
     
 @sv.on_keyword(('绿茶'))
 async def greentea(bot, ev):
-    path = 'C:/Users/Administrator/Desktop/res/img/Zoe/绿茶派.mp3'
+    path = f'{pathZOE}绿茶派.mp3'
     await bot.send(ev, f'[CQ:record,file=file:///{path}]')
 
 #====群聊======#
 @sv.on_fullmatch(('我满了', '我出了', '我成功了', '我出货了'))
 async def chat_congrat(bot, ev):
     await bot.send(ev, '恭喜！', at_sender=True)
+    await bot.send(ev, R.img(f"keyword/出货.jpg").cqcode)
     await util.silence(ev, 30)
 
 @sv.on_fullmatch(('我歪了', '我放弃了', '我g了'))
