@@ -497,7 +497,7 @@ niant_folder = R.img('keyword/niant/').path
 @sv.on_keyword(('炼铜'))
 async def chat_niant(bot, ev):
     if random.random() < 0.50:
-        filelist = os.listdir(jietou_folder)
+        filelist = os.listdir(niant_folder)
         path = None
         while not path or not os.path.isfile(path):
             filename = random.choice(filelist)
